@@ -1,0 +1,40 @@
+﻿@model  fintrac.Models.Offer
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome</h2>
+
+<div class="jumbotron">
+    <h1>@ViewBag.Title to Fintrac</h1>
+</div>
+<h4>Choose your Service and Location.</h4>
+<hr />
+@Html.ValidationSummary()
+<div class="form-group">
+    @Html.LabelFor(m => m.offerPostalCode, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.offerPostalCode, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.serviceName, new { @class = "col-md-2 control-label" })
+    <select name="serviceName">
+
+        <option>Credit card</option>
+        <option>Checking account</option>
+        <option>Saving Account</option>
+        <option>Mortgage</option>
+        <option>Loan</option>
+        @*<option>@DateTime.Now.AddYears(5).Year</option>*@
+
+    </select>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" class="btn btn-default" value="Submit" />
+    </div>
+</div>
+

@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetTblOffer">
+    <Key>
+      <PropertyRef Name="OId" />
+    </Key>
+    <Property Name="OId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="OfferName" Type="nvarchar(max)" />
+    <Property Name="ServiceName" Type="nvarchar(max)" />
+    <Property Name="PostalCOde" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="PostalCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblAdvisor">
+    <Key>
+      <PropertyRef Name="advisorId" />
+    </Key>
+    <Property Name="advisorId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="city" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="postalCode" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="offerId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBank">
+    <Key>
+      <PropertyRef Name="bankId" />
+    </Key>
+    <Property Name="bankId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="bankImage" Type="varbinary(max)" Nullable="false" />
+    <Property Name="advisorId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblOffer">
+    <Key>
+      <PropertyRef Name="offerId" />
+    </Key>
+    <Property Name="offerId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="offerDetailId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="offerRequestId" Type="nvarchar" MaxLength="128" />
+    <Property Name="offername" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="serviceName" Type="nvarchar" MaxLength="255" />
+    <Property Name="offerPostalCode" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="tblOfferDecision">
+    <Key>
+      <PropertyRef Name="offerDecisionId" />
+    </Key>
+    <Property Name="offerDecisionId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="offerRequestId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ConfirmationDetail" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblOfferDetails">
+    <Key>
+      <PropertyRef Name="offerDetailId" />
+    </Key>
+    <Property Name="offerDetailId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="offerId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="offerTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="offerDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="offerPostalCode" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="offerImage" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblOfferRequest">
+    <Key>
+      <PropertyRef Name="offerRequestId" />
+    </Key>
+    <Property Name="offerRequestId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="advisorId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="offerRequestDetail" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="offerRequestMonthlyIncome" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="offerRequestMonthlyExpense" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblAdvisor_offerId_FK">
+    <End Role="tblOffer" Type="Self.tblOffer" Multiplicity="1" />
+    <End Role="tblAdvisor" Type="Self.tblAdvisor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOffer">
+        <PropertyRef Name="offerId" />
+      </Principal>
+      <Dependent Role="tblAdvisor">
+        <PropertyRef Name="offerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblBank_advisorId_FK">
+    <End Role="tblAdvisor" Type="Self.tblAdvisor" Multiplicity="1" />
+    <End Role="tblBank" Type="Self.tblBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdvisor">
+        <PropertyRef Name="advisorId" />
+      </Principal>
+      <Dependent Role="tblBank">
+        <PropertyRef Name="advisorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblOffer_Id_FK">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="tblOffer" Type="Self.tblOffer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblOffer">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblOffer_offerRequestId_FK">
+    <End Role="tblOfferRequest" Type="Self.tblOfferRequest" Multiplicity="0..1" />
+    <End Role="tblOffer" Type="Self.tblOffer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOfferRequest">
+        <PropertyRef Name="offerRequestId" />
+      </Principal>
+      <Dependent Role="tblOffer">
+        <PropertyRef Name="offerRequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblOfferDecision_offerRequestId_FK">
+    <End Role="tblOfferRequest" Type="Self.tblOfferRequest" Multiplicity="1" />
+    <End Role="tblOfferDecision" Type="Self.tblOfferDecision" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOfferRequest">
+        <PropertyRef Name="offerRequestId" />
+      </Principal>
+      <Dependent Role="tblOfferDecision">
+        <PropertyRef Name="offerRequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblOfferDetails_offerId_FK">
+    <End Role="tblOffer" Type="Self.tblOffer" Multiplicity="1" />
+    <End Role="tblOfferDetails" Type="Self.tblOfferDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOffer">
+        <PropertyRef Name="offerId" />
+      </Principal>
+      <Dependent Role="tblOfferDetails">
+        <PropertyRef Name="offerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblOfferRequest_advisorId_FK">
+    <End Role="tblAdvisor" Type="Self.tblAdvisor" Multiplicity="1" />
+    <End Role="tblOfferRequest" Type="Self.tblOfferRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdvisor">
+        <PropertyRef Name="advisorId" />
+      </Principal>
+      <Dependent Role="tblOfferRequest">
+        <PropertyRef Name="advisorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblOfferRequest_Id_FK">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="tblOfferRequest" Type="Self.tblOfferRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblOfferRequest">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetTblOffer" EntityType="Self.AspNetTblOffer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAdvisor" EntityType="Self.tblAdvisor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBank" EntityType="Self.tblBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOffer" EntityType="Self.tblOffer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOfferDecision" EntityType="Self.tblOfferDecision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOfferDetails" EntityType="Self.tblOfferDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOfferRequest" EntityType="Self.tblOfferRequest" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="tblAdvisor_offerId_FK" Association="Self.tblAdvisor_offerId_FK">
+      <End Role="tblOffer" EntitySet="tblOffer" />
+      <End Role="tblAdvisor" EntitySet="tblAdvisor" />
+    </AssociationSet>
+    <AssociationSet Name="tblBank_advisorId_FK" Association="Self.tblBank_advisorId_FK">
+      <End Role="tblAdvisor" EntitySet="tblAdvisor" />
+      <End Role="tblBank" EntitySet="tblBank" />
+    </AssociationSet>
+    <AssociationSet Name="tblOffer_Id_FK" Association="Self.tblOffer_Id_FK">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="tblOffer" EntitySet="tblOffer" />
+    </AssociationSet>
+    <AssociationSet Name="tblOffer_offerRequestId_FK" Association="Self.tblOffer_offerRequestId_FK">
+      <End Role="tblOfferRequest" EntitySet="tblOfferRequest" />
+      <End Role="tblOffer" EntitySet="tblOffer" />
+    </AssociationSet>
+    <AssociationSet Name="tblOfferDecision_offerRequestId_FK" Association="Self.tblOfferDecision_offerRequestId_FK">
+      <End Role="tblOfferRequest" EntitySet="tblOfferRequest" />
+      <End Role="tblOfferDecision" EntitySet="tblOfferDecision" />
+    </AssociationSet>
+    <AssociationSet Name="tblOfferDetails_offerId_FK" Association="Self.tblOfferDetails_offerId_FK">
+      <End Role="tblOffer" EntitySet="tblOffer" />
+      <End Role="tblOfferDetails" EntitySet="tblOfferDetails" />
+    </AssociationSet>
+    <AssociationSet Name="tblOfferRequest_advisorId_FK" Association="Self.tblOfferRequest_advisorId_FK">
+      <End Role="tblAdvisor" EntitySet="tblAdvisor" />
+      <End Role="tblOfferRequest" EntitySet="tblOfferRequest" />
+    </AssociationSet>
+    <AssociationSet Name="tblOfferRequest_Id_FK" Association="Self.tblOfferRequest_Id_FK">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="tblOfferRequest" EntitySet="tblOfferRequest" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

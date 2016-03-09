@@ -1,0 +1,67 @@
+﻿@model fintrac.Models.Offer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Offer</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.bankName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bankName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offerTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offerTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offerDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offerDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.serviceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.serviceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offerPostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offerPostalCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

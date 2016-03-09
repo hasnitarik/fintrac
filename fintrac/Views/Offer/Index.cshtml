@@ -1,0 +1,64 @@
+﻿@model IEnumerable<fintrac.Models.Offer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.bankName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offerTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offerDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.offerPostalCode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.bankName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offerTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offerDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serviceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offerPostalCode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="tblAdvisors">
+      <EntityTypeMapping TypeName="Model.tblAdvisor">
+        <MappingFragment StoreEntitySet="tblAdvisor">
+          <ScalarProperty Name="advisorId" ColumnName="advisorId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="offerId" ColumnName="offerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBanks">
+      <EntityTypeMapping TypeName="Model.tblBank">
+        <MappingFragment StoreEntitySet="tblBank">
+          <ScalarProperty Name="bankId" ColumnName="bankId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="bankImage" ColumnName="bankImage" />
+          <ScalarProperty Name="advisorId" ColumnName="advisorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOffers">
+      <EntityTypeMapping TypeName="Model.tblOffer">
+        <MappingFragment StoreEntitySet="tblOffer">
+          <ScalarProperty Name="offerPostalCode" ColumnName="offerPostalCode" />
+          <ScalarProperty Name="serviceName" ColumnName="serviceName" />
+          <ScalarProperty Name="offerId" ColumnName="offerId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="offerDetailId" ColumnName="offerDetailId" />
+          <ScalarProperty Name="offerRequestId" ColumnName="offerRequestId" />
+          <ScalarProperty Name="offername" ColumnName="offername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOfferDecisions">
+      <EntityTypeMapping TypeName="Model.tblOfferDecision">
+        <MappingFragment StoreEntitySet="tblOfferDecision">
+          <ScalarProperty Name="offerDecisionId" ColumnName="offerDecisionId" />
+          <ScalarProperty Name="offerRequestId" ColumnName="offerRequestId" />
+          <ScalarProperty Name="ConfirmationDetail" ColumnName="ConfirmationDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOfferDetails">
+      <EntityTypeMapping TypeName="Model.tblOfferDetail">
+        <MappingFragment StoreEntitySet="tblOfferDetails">
+          <ScalarProperty Name="offerDetailId" ColumnName="offerDetailId" />
+          <ScalarProperty Name="offerId" ColumnName="offerId" />
+          <ScalarProperty Name="offerTitle" ColumnName="offerTitle" />
+          <ScalarProperty Name="offerDescription" ColumnName="offerDescription" />
+          <ScalarProperty Name="offerPostalCode" ColumnName="offerPostalCode" />
+          <ScalarProperty Name="offerImage" ColumnName="offerImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOfferRequests">
+      <EntityTypeMapping TypeName="Model.tblOfferRequest">
+        <MappingFragment StoreEntitySet="tblOfferRequest">
+          <ScalarProperty Name="offerRequestId" ColumnName="offerRequestId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="advisorId" ColumnName="advisorId" />
+          <ScalarProperty Name="offerRequestDetail" ColumnName="offerRequestDetail" />
+          <ScalarProperty Name="offerRequestMonthlyIncome" ColumnName="offerRequestMonthlyIncome" />
+          <ScalarProperty Name="offerRequestMonthlyExpense" ColumnName="offerRequestMonthlyExpense" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="Model.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="Model.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="Model.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="Model.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="Model.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="AspNetTblOffers">
+      <EntityTypeMapping TypeName="Model.AspNetTblOffer">
+        <MappingFragment StoreEntitySet="AspNetTblOffer">
+          <ScalarProperty Name="PostalCOde" ColumnName="PostalCOde" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="OfferName" ColumnName="OfferName" />
+          <ScalarProperty Name="OId" ColumnName="OId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
